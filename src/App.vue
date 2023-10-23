@@ -14,11 +14,18 @@
 </template>
 
 <script lang="ts" setup>
+import { onMounted } from "vue";
 import PopupSaveConfig from "@/components/PopupSaveConfig.vue";
 import HeaderNav from "@/components/HeaderNav.vue";
-import { usePopupStore } from "@/store";
+import { useRootStore, usePopupStore } from "@/store";
+import coffeeServices from "@/services/coffee";
 
 const popupStore = usePopupStore();
+const rootStore = useRootStore();
+
+onMounted(async () => {
+  rootStore.coffeeList = await coffeeServices.getAllConfigsCoffee();
+});
 </script>
 
 <style lang="scss">

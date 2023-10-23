@@ -1,3 +1,4 @@
+import { Coffee } from "@/types/coffee";
 import { defineStore } from "pinia";
 
 export const useRootStore = defineStore("root", {
@@ -6,6 +7,7 @@ export const useRootStore = defineStore("root", {
     count: 6,
     listSizeMenu: ["Стандартный", "Увеличиный"],
     listCountMenu: [6, 8, 12],
+    coffeeList: [],
   }),
 });
 
@@ -14,4 +16,5 @@ type RootStore = {
   count: number;
   listSizeMenu: string[];
   listCountMenu: number[];
+  coffeeList: Coffee[];
 };

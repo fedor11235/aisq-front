@@ -10,6 +10,11 @@
 </template>
 
 <script lang="ts" setup>
+import coffeeServices from "@/services/coffee";
+import { useRootStore } from "@/store";
+
+const rootStore = useRootStore();
+
 const emit = defineEmits<{
   (e: "close"): void;
 }>();
@@ -18,8 +23,14 @@ function handlerClosePopup() {
   emit("close");
 }
 
-function handlerSave() {
-  console.log("сохранить");
+async function handlerSave() {
+  const coffeeNew = await coffeeServices.addNewConfigCoffee({
+    size: rootStore.size,
+    count: rootStore.count,
+  });
+  if (coffeeNew) {
+    rootStore.coffeeList.push(coffeeNew);
+  }
   emit("close");
 }
 </script>
