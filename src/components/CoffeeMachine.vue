@@ -38,8 +38,8 @@ const rootStore = useRootStore();
 </script>
 <style lang="scss">
 .coffee-machine {
-  width: 80%;
-  height: 50%;
+  width: 100%;
+  height: 50vh;
   border: 1px solid black;
   display: flex;
   flex-direction: column;

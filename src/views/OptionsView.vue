@@ -8,16 +8,17 @@
 <script lang="ts" setup>
 import CoffeeMachine from "@/components/CoffeeMachine.vue";
 import UserConfiguration from "@/components/UserConfiguration.vue";
-import { useRootStore } from "@/store";
 </script>
+
 <style lang="scss">
 .options-view {
-  height: 100vh;
-  width: 100vw;
+  position: fixed;
+  top: 50%;
+  translate: 0 -40%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  row-gap: 8px;
+  justify-content: space-between;
+  width: 80vw;
+  height: calc(70vh + 10px);
 }
 </style>
