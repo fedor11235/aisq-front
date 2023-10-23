@@ -1,0 +1,1 @@
+export { useRootStore } from "./root";
